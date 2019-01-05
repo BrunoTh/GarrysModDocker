@@ -1,0 +1,11 @@
+version: "3.1"
+services:
+  garrysmod:
+    build: .
+    ports:
+      - "27005:27005/udp"
+      - "27015:27015/udp"
+    volumes:
+      - ./server.cfg:/home/steam/gmodds/garrysmod/cfg/server.cfg
+    tty: true
+    command: +gamemode terrortown +map ttt_lego +host_workshop_collection 716717312
