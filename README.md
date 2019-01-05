@@ -27,3 +27,6 @@ The configuration files are stored in the following directory `/home/steam/gmodd
 In this example we insert `server.cfg` into the container, set gamemode to `terrortown`, the initial map to `ttt_lego` and use the workshop collection `716717312`:
 
     $ docker run -t -d -p 27005:27005/udp -p 27015:27015/udp -v ./server.cfg:/home/steam/gmodds/garrysmod/cfg/server.cfg garrysmod +gamemode terrortown +map ttt_lego +host_workshop_collection 716717312
+
+## TODO
+- Add a volume for workshop collections.
