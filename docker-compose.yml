@@ -7,5 +7,12 @@ services:
       - "27015:27015/udp"
     volumes:
       - ./server.cfg:/home/steam/gmodds/garrysmod/cfg/server.cfg
+      - garrysmod-gmas:/home/steam/gmodds/garrysmod/cache/srcds/
+      - garrysmod-addons:/home/steam/gmodds/garrysmod/addons/
+      - garrysmod-data:/home/steam/gmodds/garrysmod/data/
     tty: true
     command: +gamemode terrortown +map ttt_lego +host_workshop_collection 716717312
+volumes:
+  garrysmod-gmas:
+  garrysmod-addons:
+  garrysmod-data:
