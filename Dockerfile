@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 # Install dependencies and create steam user
 RUN dpkg --add-architecture i386 && \
     apt-get update && \
-    apt-get install -y wget lib32gcc1 lib32stdc++6 && \
+    apt-get install -y wget lib32gcc1 lib32stdc++6 lib32tinfo5 && \
     rm -r /var/cache/apt/archives/* && \
     useradd steam -m
 
