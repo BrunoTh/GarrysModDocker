@@ -34,4 +34,7 @@ RUN echo '"mountcfg"' > /home/steam/gmodds/garrysmod/cfg/mount.cfg && \
     echo '"tf" "/home/steam/content/tf"' >> /home/steam/gmodds/garrysmod/cfg/mount.cfg && \
     echo '}' >> /home/steam/gmodds/garrysmod/cfg/mount.cfg
 
-ENTRYPOINT ["/home/steam/gmodds/srcds_run", "-game", "garrysmod"]
+USER root
+ADD entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
