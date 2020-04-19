@@ -1,9 +1,11 @@
 FROM ubuntu:18.04
 
+HEALTHCHECK CMD netstat -an | grep 27015 > /dev/null; if [ 0 != $? ]; then exit 1; fi;													 
+
 # Install dependencies and create steam user
 RUN dpkg --add-architecture i386 && \
     apt-get update && \
-    apt-get install -y wget lib32gcc1 lib32stdc++6 lib32tinfo5 && \
+    apt-get install -y wget lib32gcc1 lib32stdc++6 lib32tinfo5 net-tools && \
     rm -r /var/cache/apt/archives/* && \
     useradd steam -m
 
